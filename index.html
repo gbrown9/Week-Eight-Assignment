@@ -50,10 +50,30 @@ function runit() {
 import turtle
 t = turtle.Turtle()
 
-for c in ["red","green","blue","yellow","orange"]:
-    t.color(c)
-    t.forward(100)
-    t.left(144)
+sides = int(input("How many sides would you like the polygon to have? (2-25)"))
+
+angle = 180 - (((sides-2)*180) / sides)
+
+if sides >= 3:
+    for c in range(0,sides):
+        if sides <7:
+            t.forward(100)
+            t.left(angle)
+        elif sides >= 7:
+            if sides < 10:
+                t.forward(65)
+                t.left(angle)
+            elif sides >= 10:
+                if sides < 15:
+                    t.forward(45)
+                    t.left(angle)
+                elif sides >= 15 
+                    t.forward(10)
+                    t.left(angle)
+        
+else: 
+    print("Think about what you just did... Polygons have altleast 3 sides...")
+    exit()
 
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
